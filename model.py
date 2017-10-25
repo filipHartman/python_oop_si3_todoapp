@@ -1,2 +1,4 @@
 class ToDo_archive():
-    pass
+
+    def __init__(self):
+        self.todo_archive = []
