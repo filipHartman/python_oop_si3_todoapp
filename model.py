@@ -1,3 +1,5 @@
+import csv
+
 class ToDo_item():
     def __init__(self, name, description, is_done=False):
         self.name = name
@@ -27,3 +29,14 @@ class ToDo_archive():
 
     def delete_item(self, index):
         self.todo_archive.pop(index)
+
+    def export_tasks(self):
+
+        tasks_to_save = []
+
+        for task in self.todo_archive:
+            tasks_to_save.append([task.name, task.description, str(task.is_done)])
+
+        with open('tasks.txt', 'w') as tasks_file:
+            tasks_csv = csv.writer(tasks_file)
+            tasks_csv.writerows(tasks_to_save)
