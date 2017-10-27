@@ -10,22 +10,23 @@ def ask_add_item(tasks_archive):
 
 
 def get_item_by_index(tasks_archive):
-
+    display_all_items(tasks_archive)
     index = int(input('Enter index of item: '))
     task = tasks_archive.todo_archive[index]
     return task
 
 
 def ask_delete_item(tasks_archive):
-    print('DELETING ITEM FROM ARCHIVE')
+    print('DELETING ITEM FROM ARCHIVE\n')
+    display_all_items(tasks_archive)
     # here we need to display whole list of tasks
     task = get_item_by_index(tasks_archive)
     tasks_archive.todo_archive.remove(task)
 
 
 def ask_modify_item(tasks_archive):
-    print('MODIFYING ITEM\'S PARAMETERS')
-    # here we need to display whole list of tasks
+    print('MODIFYING ITEM\'S PARAMETERS\n')
+
     task = get_item_by_index(tasks_archive)
     choice = input('What do you want modify: name (n) or description (d)? ')
     make_modification(task, choice)
@@ -46,10 +47,13 @@ def make_modification(task, choice):
     """
 
 
-def ask_display_all_items(tasks_archive):
+def display_all_items(tasks_archive):
     tasks_to_display = tasks_archive.todo_archive
-    # jakaś metoda od wiew
+    display_table_of_all_items(tasks_archive)
 
 
-def ask_display_item_details(tasks_archive):
+def display_item(tasks_archive):
+    display_all_items(tasks_archive)
     task = get_item_by_index(tasks_archive)
+    index = tasks_archive.index(task)
+    display_item_details(task, index)
