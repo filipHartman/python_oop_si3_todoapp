@@ -15,14 +15,17 @@ def prepare_items_to_display(tasks):
 
         first_row_of_item = 'INDEX: {0}  NAME: {1}'.format(index, name)
         second_row_of_item ='DESCRIPTION:\n{}'.format(description.upper())
+        appending_data_to_display(display, first_row_of_item, second_row_of_item, separate_bar)
+    return display
 
-        display.append(first_row_of_item)
-        display.append(second_row_of_item)
-        display.append(separate_bar)
 
-        return display
+def appending_data_to_display(display, first_row, second_row, separate_bar):
+    display.append(first_row)
+    display.append(second_row_of_item)
+    display.append(separate_bar)
+
 
 def get_separate_bar():
     bar_lenght = 40
-    separate_bar = 40*'-'
+    separate_bar = 40 * '-'
     return separate_bar
