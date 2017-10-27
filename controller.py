@@ -10,7 +10,8 @@ def ask_add_item(tasks_archive):
 
 
 def get_item_by_index(tasks_archive):
-    index = int(input('Enter index number of item: '))
+
+    index = int(input('Enter index of item: '))
     task = tasks_archive.todo_archive[index]
     return task
 
