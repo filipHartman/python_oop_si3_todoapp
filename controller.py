@@ -15,10 +15,27 @@ def ask_delete_item(tasks_archive):
     tasks_archive.todo_archive.pop(index)
 
 
-def ask_modify_item():
-    pass
+def ask_modify_item(tasks_archive):
+    # here we need to display whole list of tasks
+    index = int(input('Enter index number of item to modify: '))
+    task = tasks_archive.todo_archive[index]
+    choice = input('What do you want modify: name (n) or description (d)? ')
+    make_modification(choice)
 
 
+def make_modification(choice):
+    if choice in ['n', 'name']:
+        new_name = input('Enter the new name for choosen task: ')
+        task.change_name(new_name)
+
+    elif choice in ['d', 'description']:
+        new_description = input('Enter the new description of choosen task: ')
+        task.change_description(new_description)
+    else:
+        pass
+    """
+    ZABEZPIECZ TO!!!!!!!!!!!!!!!!!!!!!!!!!
+    """
 def ask_display_all_items():
     pass
 
