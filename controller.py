@@ -7,8 +7,12 @@ def ask_add_item(tasks_archive):
     task = ToDo_item(name, description)
     tasks_archive.todo_archive.append(task)
 
-def ask_delete_item():
-    pass
+
+def ask_delete_item(tasks_archive):
+    # here we need to display whole list of tasks
+    index = int(input('Enter index number of item to delete: '))
+    index -= 1
+    tasks_archive.todo_archive.pop(index)
 
 
 def ask_modify_item():
