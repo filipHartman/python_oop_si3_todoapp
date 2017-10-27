@@ -8,22 +8,27 @@ def ask_add_item(tasks_archive):
     tasks_archive.todo_archive.append(task)
 
 
+def get_item_by_index(tasks_archive):
+    index = int(input('Enter index number of item: '))
+    task = tasks_archive.todo_archive[index]
+    return task
+
 def ask_delete_item(tasks_archive):
+    print('DELETING ITEM FROM ARCHIVE')
     # here we need to display whole list of tasks
-    index = int(input('Enter index number of item to delete: '))
-    index -= 1
-    tasks_archive.todo_archive.pop(index)
+    task = get_item_by_index(tasks_archive)
+    tasks_archive.todo_archive.remove(task)
 
 
 def ask_modify_item(tasks_archive):
+    print('MODIFYING ITEM\'S PARAMETERS')
     # here we need to display whole list of tasks
-    index = int(input('Enter index number of item to modify: '))
-    task = tasks_archive.todo_archive[index]
+    task = get_item_by_index(tasks_archive)
     choice = input('What do you want modify: name (n) or description (d)? ')
-    make_modification(choice)
+    make_modification(task, choice)
 
 
-def make_modification(choice):
+def make_modification(task, choice):
     if choice in ['n', 'name']:
         new_name = input('Enter the new name for choosen task: ')
         task.change_name(new_name)
