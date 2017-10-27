@@ -1,4 +1,5 @@
 from model import *
+from view import *
 
 
 def ask_add_item(tasks_archive):
@@ -12,6 +13,7 @@ def get_item_by_index(tasks_archive):
     index = int(input('Enter index number of item: '))
     task = tasks_archive.todo_archive[index]
     return task
+
 
 def ask_delete_item(tasks_archive):
     print('DELETING ITEM FROM ARCHIVE')
@@ -41,9 +43,12 @@ def make_modification(task, choice):
     """
     ZABEZPIECZ TO!!!!!!!!!!!!!!!!!!!!!!!!!
     """
-def ask_display_all_items():
-    pass
 
 
-def ask_display_item_details():
-    pass
+def ask_display_all_items(tasks_archive):
+    tasks_to_display = tasks_archive.todo_archive
+    # jakaś metoda od wiew
+
+
+def ask_display_item_details(tasks_archive):
+    task = get_item_by_index(tasks_archive)
