@@ -1,6 +1,6 @@
 import csv
 
-class ToDo_item():
+class TodoItem():
     def __init__(self, name, description, is_done=False):
         self.name = name
         self.description = description
@@ -19,7 +19,7 @@ class ToDo_item():
         pass
 
 
-class ToDo_archive():
+class TodoArchive():
 
     def __init__(self):
         self.todo_archive = []
