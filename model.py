@@ -24,8 +24,8 @@ class TodoArchive():
     def add_item(self, task):
         self.todo_archive.append(task)
 
-    def delete_item(self, index):
-        self.todo_archive.pop(index)
+    def delete_item(self, task):
+        self.todo_archive.remove(task)
 
     def export_tasks(self):
 
