@@ -6,7 +6,9 @@ from menu import *
 
 def main():
     os.system('clear')
+
     tasks_archive = controller.create_tasks_archive()
+    controller.import_tasks_to_tasks_archive(tasks_archive)
 
     program_active = True
     while program_active:

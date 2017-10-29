@@ -11,6 +11,10 @@ def create_tasks_archive():
     return tasks_archive
 
 
+def import_tasks_to_tasks_archive(tasks_archive):
+    tasks_archive.import_tasks()
+
+
 def ask_add_item(tasks_archive):
     print('-----> ADDITION NEW ITEM TO ARCHIVE <-----\n')
     name = input('Enter the name of task to do: ')
